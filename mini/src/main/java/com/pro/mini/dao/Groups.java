@@ -19,7 +19,7 @@ public class Groups {
     @Column(name = "id", nullable = false)
     private int id;
 
-    @Column(name = "group_name", nullable = false)
+    @Column(name = "group_name", nullable = false, unique = true)
     private String groupName;
 
     @CreationTimestamp

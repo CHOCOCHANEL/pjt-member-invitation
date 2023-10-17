@@ -19,10 +19,12 @@ public class Members {
     @Column(name = "id", nullable = false)
     private int id;
 
-    @Column(name = "group_id", nullable = false)
-    private String groupId;
-    @Column(name = "user_id", nullable = false)
-    private String userId;
+    @ManyToOne
+    @JoinColumn(name = "group_id", referencedColumnName = "id", nullable = false) // foreign key (userId) references User (id)
+    private Groups groups;
+    @ManyToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false) // foreign key (user_id) references User (id)
+    private Users users;
     @Column(name = "manager_yn", nullable = false)
     @ColumnDefault("'N'")
     private String managerYn;
