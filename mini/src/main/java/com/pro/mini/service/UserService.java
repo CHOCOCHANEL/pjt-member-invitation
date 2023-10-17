@@ -2,7 +2,6 @@ package com.pro.mini.service;
 
 import com.pro.mini.dao.UserDAO;
 import com.pro.mini.repository.UserRepository;
-import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,11 +26,11 @@ public class UserService {
     }
 
     public List<UserDAO> getUsersByEmail(String email){
-        return userRepository.findByEmail(email);
+        return userRepository.findAllByEmail(email);
     }
 
     public List<UserDAO> getUsersByName(String name){
-        return userRepository.findByName(name);
+        return userRepository.findAllByName(name);
     }
 
     public void deleteUser(Integer id){

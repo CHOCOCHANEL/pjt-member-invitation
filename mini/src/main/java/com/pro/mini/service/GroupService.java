@@ -25,7 +25,7 @@ public class GroupService {
         return groupRepository.findById(id);
     }
 
-    public List<GroupDAO> getGroupsByGroupName(String groupName){
+    public Optional<GroupDAO> getGroupByGroupName(String groupName){
         return groupRepository.findByGroupName(groupName);
     }
 
