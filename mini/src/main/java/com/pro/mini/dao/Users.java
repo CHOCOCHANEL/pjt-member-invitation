@@ -13,7 +13,7 @@ import java.sql.Timestamp;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
 @Table
-public class User {
+public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -28,7 +28,7 @@ public class User {
     @Column
     private Timestamp createdAt;
     @Column(nullable = false)
-    @ColumnDefault("N")
+    @ColumnDefault("'N'")
     private String tempYn;
 
 
