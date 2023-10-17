@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
 
 import java.sql.Timestamp;
 
@@ -14,7 +13,7 @@ import java.sql.Timestamp;
 @AllArgsConstructor
 @Entity
 @Table(name = "Invitations")
-public class Invitations {
+public class InvitationDAO {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -29,10 +28,10 @@ public class Invitations {
     private String resYn;
     @ManyToOne
     @JoinColumn(name = "group_id", referencedColumnName = "id", nullable = false) // foreign key (userId) references User (id)
-    private Groups groups;
+    private GroupDAO groupDAO;
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false) // foreign key (user_id) references User (id)
-    private Users users;
+    private UserDAO userDAO;
     @CreationTimestamp
     @Column(name = "created_at")
     private Timestamp createdAt;

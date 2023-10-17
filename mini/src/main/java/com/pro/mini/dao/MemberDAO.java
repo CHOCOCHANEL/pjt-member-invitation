@@ -13,7 +13,7 @@ import java.sql.Timestamp;
 @AllArgsConstructor
 @Entity
 @Table(name = "Members")
-public class Members {
+public class MemberDAO {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -21,10 +21,10 @@ public class Members {
 
     @ManyToOne
     @JoinColumn(name = "group_id", referencedColumnName = "id", nullable = false) // foreign key (userId) references User (id)
-    private Groups groups;
+    private GroupDAO groupDAO;
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false) // foreign key (user_id) references User (id)
-    private Users users;
+    private UserDAO userDAO;
     @Column(name = "manager_yn", nullable = false)
     @ColumnDefault("'N'")
     private String managerYn;
