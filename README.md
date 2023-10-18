@@ -43,4 +43,5 @@
 ### 📗Documentation📘
 1) [API Documentation](https://documenter.getpostman.com/view/20944788/2s9YR86EZn)
 2) [Entity Relation Diagram](https://drawsql.app/teams/team-chanel/diagrams/be-pro-mini)
-![1018  ERD  mini drawsql app](https://github.com/CHOCOCHANEL/pjt-member-invitation/assets/22478698/c2ee1466-2ab0-4e5d-8c5a-63001783441a)
+
+![1018  ERD  mini drawsql app](https://github.com/CHOCOCHANEL/pjt-member-invitation/assets/22478698/b5a94cdd-9456-4ced-9781-1a0ffd8e6247)
