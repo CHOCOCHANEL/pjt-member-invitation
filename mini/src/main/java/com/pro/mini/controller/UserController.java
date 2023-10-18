@@ -1,5 +1,7 @@
 package com.pro.mini.controller;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.pro.mini.service.UserService;
 import com.pro.mini.vo.UserVO;
@@ -33,10 +35,12 @@ public class UserController {
 
     @ResponseBody
     @PostMapping
-    public ResponseEntity<UserVO> saveUser(HttpServletRequest req, HttpServletResponse res, @RequestBody String jsonStr) throws IOException {
-        log.info("jsonStr ::: \n{}", jsonStr);
+    public ResponseEntity<UserVO> saveUser(HttpServletRequest req, HttpServletResponse res, @RequestBody String json) throws IOException {
+        log.info("[saveUser]\t" +
+                "json ::: \n{}", json);
         ObjectMapper mapper = new ObjectMapper();
-        UserVO userVO = mapper.readValue(jsonStr, UserVO.class);
+        mapper.setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY);
+        UserVO userVO = mapper.readValue(json, UserVO.class);
 
         log.info("[saveUser]\t" +
                 "userVO ::: {}", userVO);
@@ -47,3 +51,4 @@ public class UserController {
         return new ResponseEntity<UserVO>(userService.saveUser(userVO), HttpStatus.OK);
     }
 }
+

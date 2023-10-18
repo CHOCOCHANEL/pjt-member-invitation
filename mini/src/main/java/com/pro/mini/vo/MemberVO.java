@@ -10,7 +10,7 @@ import java.sql.Timestamp;
 
 @Getter
 @Setter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@NoArgsConstructor
 @AllArgsConstructor
 @RequiredArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
