@@ -26,11 +26,13 @@
 ✅ Gradle 8.4 (Gradle-based project)<br>
 ✅ Spring Boot <br>
 ✅ Dependencies<br>
+```
  1) Spring Web
  2) Spring Data JPA
  3) H2 Database (In-memory)
  4) Lombok
- 5) JUnit5 <br>
+ 5) JUnit5
+```
 ✅ Please freely select the HTTP Method of the API.<br>
 ✅ Please freely define error response and error code.<br>
 ✅ External libraries and open source can be used (however, please clearly indicate the open source used and the purpose of use in the README file.)<br><br>
