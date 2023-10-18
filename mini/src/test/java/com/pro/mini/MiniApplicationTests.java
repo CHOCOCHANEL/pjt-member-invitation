@@ -11,6 +11,7 @@ import com.pro.mini.service.UserService;
 import org.junit.jupiter.api.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
@@ -22,14 +23,21 @@ class MiniApplicationTests {
 
 	private final Logger log = LoggerFactory.getLogger(getClass());
 
+	@Autowired
 	private UserService userService;
+	@Autowired
 	private GroupService groupService;
+	@Autowired
 	private MemberService memberService;
+	@Autowired
 	private InvitationService invitationService;
-
+	@Autowired
 	private UserDAO userDAO;
+	@Autowired
 	private GroupDAO groupDAO;
+	@Autowired
 	private MemberDAO memberDAO;
+	@Autowired
 	private InvitationDAO invitationDAO;
 	@BeforeAll
 	void setUp() {
