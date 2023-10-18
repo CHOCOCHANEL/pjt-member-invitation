@@ -41,8 +41,16 @@ public class UserVO {
         this.name = name;
         this.phone = phone;
         this.email = email;
+        this.tempYn = "N";
     }
     public UserVO(String name, String phone, String email, String tempYn) {
+        this.name = name;
+        this.phone = phone;
+        this.email = email;
+        this.tempYn = tempYn;
+    }
+    public UserVO(int id, String name, String phone, String email, String tempYn) {
+        this.id = id;
         this.name = name;
         this.phone = phone;
         this.email = email;

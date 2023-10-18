@@ -3,6 +3,8 @@ package com.pro.mini.service;
 import com.pro.mini.vo.UserVO;
 import com.pro.mini.repository.UserRepository;
 import jakarta.transaction.Transactional;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,10 +13,13 @@ import java.util.Optional;
 
 @Service
 public class UserService {
+    private final Logger log = LoggerFactory.getLogger(this.getClass());
     @Autowired
     private UserRepository userRepository;
     @Transactional
     public UserVO saveUser(UserVO userVO){
+        log.info("[UserService] saveUser" +
+                "userVO ::: {}", userVO);
         return userRepository.save(userVO);
     }
 
