@@ -44,7 +44,7 @@ public class InvitationService {
         return invitationRepository.findAllByGroupId(groupId);
     }
     public List<InvitationVO> getInvitationsByUserIdByGroupId(Integer userId, Integer groupId){
-        return invitationRepository.findAllByUserIdByGroupId(userId, groupId);
+        return invitationRepository.findAllByUserIdAndGroupId(userId, groupId);
     }
 
     @Transactional

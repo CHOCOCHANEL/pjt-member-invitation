@@ -15,5 +15,5 @@ public interface InvitationRepository extends JpaRepository<InvitationVO, Intege
     public List<InvitationVO> findAllByResponseYn(String resYn);
     public List<InvitationVO> findAllByUserId(Integer userId);
     public List<InvitationVO> findAllByGroupId(Integer groupId);
-    public List<InvitationVO> findAllByUserIdByGroupId(Integer userId, Integer groupId);
+    public List<InvitationVO> findAllByUserIdAndGroupId(Integer userId, Integer groupId);
 }
