@@ -4,36 +4,36 @@
 ### ◆◆◆ Mini Technology Challenge ◆◆◆
 ##### [Member invitation link creation function]
 1. Introduction
-🔷 Implement “member invitation link creation function”.
-🔷 Implements “Calls for Challenge”
-🔷 Features If functional requirements and technical requirements are not met, code level evaluation will not be performed.
-🔷 Evaluate your code with the “Code Level Evaluation Items” below
-🔷 Please submit the API specification for the “Member Invitation Link Creation Function”.
+🔷 Implement “member invitation link creation function”.<br>
+🔷 Implements “Calls for Challenge”<br>
+🔷 Features If functional requirements and technical requirements are not met, code level evaluation will not be performed.<br>
+🔷 Evaluate your code with the “Code Level Evaluation Items” below<br>
+🔷 Please submit the API specification for the “Member Invitation Link Creation Function”.<br>
 
 2. Request for assignment function
 2-1) Invitation of participants
-🔷 Group managers can join and invite groups.
-🔷 When inviting a member, a temporary member is created in the DB and an invitation link is created.
-🔷 When creating a member, the member's name, phone number, and email address are required values.
+🔷 Group managers can join and invite groups.<br>
+🔷 When inviting a member, a temporary member is created in the DB and an invitation link is created.<br>
+🔷 When creating a member, the member's name, phone number, and email address are required values.<br>
 
 2-2) invitation
-🔷 Invited members can join the group through the group invitation link.
-🔷 Activates temporary members and closes the invitation link when completing the invitation link.
-🔷 The invitation link expires after one use.
+🔷 Invited members can join the group through the group invitation link.<br>
+🔷 Activates temporary members and closes the invitation link when completing the invitation link.<br>
+🔷 The invitation link expires after one use.<br>
 
 ### 🛠Technical Specification💻
-✅ Java21
-✅ Gradle 8.4 (Gradle-based project)
-✅ Spring Boot 
-✅ Dependencies
+✅ Java21<br>
+✅ Gradle 8.4 (Gradle-based project)<br>
+✅ Spring Boot <br>
+✅ Dependencies<br>
  1) Spring Web
  2) Spring Data JPA
  3) H2 Database (In-memory)
  4) Lombok
  5) JUnit5
-✅ Please freely select the HTTP Method of the API.
-✅ Please freely define error response and error code.
-✅ External libraries and open source can be used (however, please clearly indicate the open source used and the purpose of use in the README file.)
+✅ Please freely select the HTTP Method of the API.<br>
+✅ Please freely define error response and error code.<br>
+✅ External libraries and open source can be used (however, please clearly indicate the open source used and the purpose of use in the README file.)<br><br>
 
 🔶 \[Incompleted] Assignment functional requirements are implemented/processed on the server (backend)
 
