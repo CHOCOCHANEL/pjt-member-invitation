@@ -11,12 +11,12 @@
 🔷 Please submit the API specification for the “Member Invitation Link Creation Function”.<br><br>
 
 2. Request for assignment function<br>
-2-1) Invitation of participants<br>
+* Invitation of participants<br>
 🔷 Group managers can join and invite groups.<br>
 🔷 When inviting a member, a temporary member is created in the DB and an invitation link is created.<br>
-🔷 When creating a member, the member's name, phone number, and email address are required values.<br><br>
+🔷 When creating a member, the member's name, phone number, and email address are required values.<br>
 
-2-2) invitation<br>
+* Invitation<br>
 🔷 Invited members can join the group through the group invitation link.<br>
 🔷 Activates temporary members and closes the invitation link when completing the invitation link.<br>
 🔷 The invitation link expires after one use.<br><br>
@@ -35,7 +35,8 @@
 ```
 ✅ Please freely select the HTTP Method of the API.<br>
 ✅ Please freely define error response and error code.<br>
-✅ External libraries and open source can be used (however, please clearly indicate the open source used and the purpose of use in the README file.)<br><br>
+✅ External libraries and open source can be used 
+> (however, please clearly indicate the open source used and the purpose of use in the README file.)<br><br>
 
 🔶 \[Incompleted] Assignment functional requirements are implemented/processed on the server (backend)<br>
 
