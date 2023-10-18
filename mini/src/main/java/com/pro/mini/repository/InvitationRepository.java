@@ -2,9 +2,11 @@ package com.pro.mini.repository;
 
 import com.pro.mini.dao.InvitationDAO;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public interface InvitationRepository extends JpaRepository<InvitationDAO, Integer> {
     public InvitationDAO findById(String id);
     public InvitationDAO findByInvitationLink(String invtLink);
