@@ -24,7 +24,6 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @ResponseBody
     @GetMapping
     public ResponseEntity<List<UserVO>> getAllUsers() {
         List<UserVO> userVOList = userService.getAllUsers();
@@ -33,7 +32,6 @@ public class UserController {
         return new ResponseEntity<List<UserVO>>(userVOList, HttpStatus.OK);
     }
 
-    @ResponseBody
     @PostMapping
     public ResponseEntity<UserVO> saveUser(HttpServletRequest req, HttpServletResponse res, @RequestBody String json) throws IOException {
         log.info("[saveUser]\t" +
