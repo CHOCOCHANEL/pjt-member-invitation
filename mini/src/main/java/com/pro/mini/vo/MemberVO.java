@@ -11,6 +11,7 @@ import java.sql.Timestamp;
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
+@RequiredArgsConstructor
 @Entity
 @Table(name = "Members")
 public class MemberVO {

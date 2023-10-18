@@ -13,6 +13,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
+@RequiredArgsConstructor
 @Entity
 @Table(name = "Users")
 public class UserVO {
@@ -37,23 +38,4 @@ public class UserVO {
     @OneToMany(mappedBy = "userVO", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<InvitationVO> invitationVOs = new ArrayList<>();
 
-    public UserVO(String name, String phone, String email) {
-        this.name = name;
-        this.phone = phone;
-        this.email = email;
-        this.tempYn = "N";
-    }
-    public UserVO(String name, String phone, String email, String tempYn) {
-        this.name = name;
-        this.phone = phone;
-        this.email = email;
-        this.tempYn = tempYn;
-    }
-    public UserVO(int id, String name, String phone, String email, String tempYn) {
-        this.id = id;
-        this.name = name;
-        this.phone = phone;
-        this.email = email;
-        this.tempYn = tempYn;
-    }
 }

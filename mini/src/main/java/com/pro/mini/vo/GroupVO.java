@@ -12,6 +12,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
+@RequiredArgsConstructor
 @Entity
 @Table(name = "Groups")
 public class GroupVO {
