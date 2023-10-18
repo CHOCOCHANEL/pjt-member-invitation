@@ -11,12 +11,12 @@
 🔷 Please submit the API specification for the “Member Invitation Link Creation Function”.
 
 2. Request for assignment function
-1) Invitation of participants
+2-1) Invitation of participants
 🔷 Group managers can join and invite groups.
 🔷 When inviting a member, a temporary member is created in the DB and an invitation link is created.
 🔷 When creating a member, the member's name, phone number, and email address are required values.
 
-2) invitation
+2-2) invitation
 🔷 Invited members can join the group through the group invitation link.
 🔷 Activates temporary members and closes the invitation link when completing the invitation link.
 🔷 The invitation link expires after one use.
