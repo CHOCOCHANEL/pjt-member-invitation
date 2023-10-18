@@ -19,7 +19,7 @@ import java.util.List;
 public class UserVO {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
+    @Column(name = "id")
     private int id;
     @Column(name = "name", nullable = false)
     private String name;
@@ -30,7 +30,7 @@ public class UserVO {
     @CreationTimestamp
     @Column(name = "created_at")
     private Timestamp createdAt;
-    @Column(name = "temp_yn", nullable = false)
+    @Column(name = "temp_yn")
     @ColumnDefault("'N'")
     private String tempYn;
     @OneToMany(mappedBy = "userVO", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -38,4 +38,14 @@ public class UserVO {
     @OneToMany(mappedBy = "userVO", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<InvitationVO> invitationVOs = new ArrayList<>();
 
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + "(" +
+                "id = " + id + ", " +
+                "name = " + name + ", " +
+                "phone = " + phone + ", " +
+                "email = " + email + ", " +
+                "createdAt = " + createdAt + ", " +
+                "tempYn = " + tempYn + ")";
+    }
 }

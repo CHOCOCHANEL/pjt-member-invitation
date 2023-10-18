@@ -17,7 +17,7 @@ import java.sql.Timestamp;
 public class MemberVO {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
+    @Column(name = "id")
     private int id;
     @ManyToOne
     private GroupVO groupVO;
@@ -30,9 +30,14 @@ public class MemberVO {
     @Column(name = "joined_at")
     private Timestamp joinedAt;
 
-    public MemberVO(GroupVO groupVO, UserVO userVO, String managerYn) {
-        this.groupVO = groupVO;
-        this.userVO = userVO;
-        this.managerYn = managerYn;
+    @Override
+    public String toString() {
+        return "MemberVO{" +
+                "id=" + id +
+                ", groupVO=" + groupVO +
+                ", userVO=" + userVO +
+                ", managerYn='" + managerYn + '\'' +
+                ", joinedAt=" + joinedAt +
+                '}';
     }
 }

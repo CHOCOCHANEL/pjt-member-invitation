@@ -17,7 +17,7 @@ import java.sql.Timestamp;
 public class InvitationVO {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
+    @Column(name = "id")
     private int id;
 
     @Column(name = "invt_link", nullable = false, unique = true)
@@ -35,11 +35,16 @@ public class InvitationVO {
     @Column(name = "created_at")
     private Timestamp createdAt;
 
-    public InvitationVO(String invtLink, String invtYn, String resYn, GroupVO groupVO, UserVO userVO) {
-        this.invtLink = invtLink;
-        this.invtYn = invtYn;
-        this.resYn = resYn;
-        this.groupVO = groupVO;
-        this.userVO = userVO;
+    @Override
+    public String toString() {
+        return "InvitationVO{" +
+                "id=" + id +
+                ", invtLink='" + invtLink + '\'' +
+                ", invtYn='" + invtYn + '\'' +
+                ", resYn='" + resYn + '\'' +
+                ", groupVO=" + groupVO +
+                ", userVO=" + userVO +
+                ", createdAt=" + createdAt +
+                '}';
     }
 }

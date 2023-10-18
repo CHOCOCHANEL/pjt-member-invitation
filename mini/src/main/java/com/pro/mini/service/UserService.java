@@ -18,7 +18,7 @@ public class UserService {
     private UserRepository userRepository;
     @Transactional
     public UserVO saveUser(UserVO userVO){
-        log.info("[UserService] saveUser" +
+        log.info("[saveUser]\t" +
                 "userVO ::: {}", userVO);
         return userRepository.save(userVO);
     }

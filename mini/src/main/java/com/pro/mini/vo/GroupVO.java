@@ -18,7 +18,7 @@ import java.util.List;
 public class GroupVO {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
+    @Column(name = "id")
     private int id;
     @Column(name = "group_name", nullable = false, unique = true)
     private String groupName;
@@ -30,7 +30,14 @@ public class GroupVO {
     @OneToMany(mappedBy = "groupVO", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<InvitationVO> invitationVOs = new ArrayList<>();
 
-    public GroupVO(String groupName) {
-        this.groupName = groupName;
+    @Override
+    public String toString() {
+        return "GroupVO{" +
+                "id=" + id +
+                ", groupName='" + groupName + '\'' +
+                ", createdAt=" + createdAt +
+                ", MemberVOs=" + MemberVOs +
+                ", invitationVOs=" + invitationVOs +
+                '}';
     }
 }
