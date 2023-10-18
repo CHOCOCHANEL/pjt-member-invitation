@@ -1,8 +1,10 @@
 package com.pro.mini.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.pro.mini.service.UserService;
 import com.pro.mini.vo.UserVO;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -30,11 +33,17 @@ public class UserController {
 
     @ResponseBody
     @PostMapping
-    public String saveUser(HttpServletRequest req, @RequestBody String body) {
-        log.info("request.Body ::: {}", body);
+    public ResponseEntity<UserVO> saveUser(HttpServletRequest req, HttpServletResponse res, @RequestBody String jsonStr) throws IOException {
+        log.info("jsonStr ::: {}", jsonStr);
+        ObjectMapper mapper = new ObjectMapper();
+        UserVO userVO = mapper.readValue(jsonStr, UserVO.class);
+
         log.info("[saveUser]\t" +
-                "body ::: {}", body);
-//        return new ResponseEntity<UserVO>(userService.saveUser(userVO), HttpStatus.OK);
-        return body;
+                "userVO ::: {}", userVO);
+        if (userVO == null){
+            res.sendError(HttpServletResponse.SC_BAD_REQUEST, "userVO is null");
+            return null;
+        }
+        return new ResponseEntity<UserVO>(userService.saveUser(userVO), HttpStatus.OK);
     }
 }
