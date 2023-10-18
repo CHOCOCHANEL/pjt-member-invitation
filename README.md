@@ -1,7 +1,10 @@
 # pjt-member-invitation
 [BE Pro] Mini Project for Spring Boot where member group invitation link can be sent
 
-### ◆◆◆ Mini Technology Challenge ◆◆◆
+### 📁Executable Jar📂
+👉👉You can download mini-0.0.1-SNATSHOT.jar [HERE](https://drive.google.com/file/d/1FUTCg8_i2OKUKKTeobFZ6eIosl3HS8cF/view?usp=share_link).👈👈 <br>
+
+### Mini Technology Challenge 
 ##### [Member invitation link creation function]
 1. Introduction<br>
 🔷 Implement “member invitation link creation function”.<br>
