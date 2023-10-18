@@ -10,7 +10,6 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
-@Getter
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
@@ -33,6 +32,26 @@ public class GroupVO {
     private List<MemberVO> MemberVOs = new ArrayList<>();
     @OneToMany(mappedBy = "groupVO", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<InvitationVO> invitationVOs = new ArrayList<>();
+
+    public int getId() {
+        return id;
+    }
+
+    public String getGroupName() {
+        return groupName;
+    }
+
+    public Timestamp getCreatedAt() {
+        return createdAt;
+    }
+
+    public List<MemberVO> getMemberVOs() {
+        return MemberVOs;
+    }
+
+    public List<InvitationVO> getInvitationVOs() {
+        return invitationVOs;
+    }
 
     @Override
     public String toString() {

@@ -9,7 +9,6 @@ import org.hibernate.annotations.DynamicInsert;
 
 import java.sql.Timestamp;
 
-@Getter
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
@@ -33,6 +32,26 @@ public class MemberVO {
     @CreationTimestamp
     @Column(name = "joined_at")
     private Timestamp joinedAt;
+
+    public int getId() {
+        return id;
+    }
+
+    public GroupVO getGroupVO() {
+        return groupVO;
+    }
+
+    public UserVO getUserVO() {
+        return userVO;
+    }
+
+    public String getManagerYn() {
+        return managerYn;
+    }
+
+    public Timestamp getJoinedAt() {
+        return joinedAt;
+    }
 
     @Override
     public String toString() {

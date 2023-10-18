@@ -11,7 +11,6 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
-@Getter
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
@@ -41,6 +40,38 @@ public class UserVO {
     private List<MemberVO> MemberVOs = new ArrayList<>();
     @OneToMany(mappedBy = "userVO", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<InvitationVO> invitationVOs = new ArrayList<>();
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public Timestamp getCreatedAt() {
+        return createdAt;
+    }
+
+    public String getTempYn() {
+        return tempYn;
+    }
+
+    public List<MemberVO> getMemberVOs() {
+        return MemberVOs;
+    }
+
+    public List<InvitationVO> getInvitationVOs() {
+        return invitationVOs;
+    }
 
     @Override
     public String toString() {
