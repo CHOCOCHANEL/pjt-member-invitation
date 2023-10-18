@@ -36,4 +36,11 @@ public class InvitationDAO {
     @Column(name = "created_at")
     private Timestamp createdAt;
 
+    public InvitationDAO(String invtLink, String invtYn, String resYn, GroupDAO groupDAO, UserDAO userDAO) {
+        this.invtLink = invtLink;
+        this.invtYn = invtYn;
+        this.resYn = resYn;
+        this.groupDAO = groupDAO;
+        this.userDAO = userDAO;
+    }
 }

@@ -25,5 +25,7 @@ public class GroupDAO {
     @Column(name = "created_at")
     private Timestamp createdAt;
 
-
+    public GroupDAO(String groupName) {
+        this.groupName = groupName;
+    }
 }

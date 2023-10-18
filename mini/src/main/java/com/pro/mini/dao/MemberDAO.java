@@ -32,4 +32,9 @@ public class MemberDAO {
     @Column(name = "joined_at")
     private Timestamp joinedAt;
 
+    public MemberDAO(GroupDAO groupDAO, UserDAO userDAO, String managerYn) {
+        this.groupDAO = groupDAO;
+        this.userDAO = userDAO;
+        this.managerYn = managerYn;
+    }
 }
