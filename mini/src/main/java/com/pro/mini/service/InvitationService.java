@@ -28,14 +28,14 @@ public class InvitationService {
     }
 
     public InvitationVO getInvitationsByLink(String invtLink){
-        return invitationRepository.findByInvitationLink(invtLink);
+        return invitationRepository.findByInvtLink(invtLink);
     }
 
     public List<InvitationVO> getInvitationsByInvtYn(String invtYn){
-        return invitationRepository.findAllByInvitationYn(invtYn);
+        return invitationRepository.findAllByInvtYn(invtYn);
     }
     public List<InvitationVO> getInvitationsByResponseYn(String resYn){
-        return invitationRepository.findAllByResponseYn(resYn);
+        return invitationRepository.findAllByResYn(resYn);
     }
     public List<InvitationVO> getInvitationsByUserId(Integer userId){
         return invitationRepository.findAllByUserId(userId);
