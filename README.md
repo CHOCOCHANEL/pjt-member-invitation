@@ -30,7 +30,7 @@
  2) Spring Data JPA
  3) H2 Database (In-memory)
  4) Lombok
- 5) JUnit5
+ 5) JUnit5 <br>
 ✅ Please freely select the HTTP Method of the API.<br>
 ✅ Please freely define error response and error code.<br>
 ✅ External libraries and open source can be used (however, please clearly indicate the open source used and the purpose of use in the README file.)<br><br>
