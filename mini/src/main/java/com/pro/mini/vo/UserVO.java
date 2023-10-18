@@ -1,4 +1,4 @@
-package com.pro.mini.dao;
+package com.pro.mini.vo;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -13,7 +13,7 @@ import java.sql.Timestamp;
 @AllArgsConstructor
 @Entity
 @Table(name = "Users")
-public class UserDAO {
+public class UserVO {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -32,12 +32,12 @@ public class UserDAO {
     @ColumnDefault("'N'")
     private String tempYn;
 
-    public UserDAO(String name, String phone, String email) {
+    public UserVO(String name, String phone, String email) {
         this.name = name;
         this.phone = phone;
         this.email = email;
     }
-    public UserDAO(String name, String phone, String email, String tempYn) {
+    public UserVO(String name, String phone, String email, String tempYn) {
         this.name = name;
         this.phone = phone;
         this.email = email;

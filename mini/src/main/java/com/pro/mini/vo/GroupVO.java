@@ -1,4 +1,4 @@
-package com.pro.mini.dao;
+package com.pro.mini.vo;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -12,7 +12,7 @@ import java.sql.Timestamp;
 @AllArgsConstructor
 @Entity
 @Table(name = "Groups")
-public class GroupDAO {
+public class GroupVO {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -25,7 +25,7 @@ public class GroupDAO {
     @Column(name = "created_at")
     private Timestamp createdAt;
 
-    public GroupDAO(String groupName) {
+    public GroupVO(String groupName) {
         this.groupName = groupName;
     }
 }

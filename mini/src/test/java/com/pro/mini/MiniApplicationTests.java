@@ -1,9 +1,9 @@
 package com.pro.mini;
 
-import com.pro.mini.dao.GroupDAO;
-import com.pro.mini.dao.InvitationDAO;
-import com.pro.mini.dao.MemberDAO;
-import com.pro.mini.dao.UserDAO;
+import com.pro.mini.vo.GroupVO;
+import com.pro.mini.vo.InvitationVO;
+import com.pro.mini.vo.MemberVO;
+import com.pro.mini.vo.UserVO;
 import com.pro.mini.service.GroupService;
 import com.pro.mini.service.InvitationService;
 import com.pro.mini.service.MemberService;
@@ -32,39 +32,39 @@ class MiniApplicationTests {
 	@Autowired
 	private InvitationService invitationService;
 	@Autowired
-	private UserDAO userDAO;
+	private UserVO userVO;
 	@Autowired
-	private GroupDAO groupDAO;
+	private GroupVO groupVO;
 	@Autowired
-	private MemberDAO memberDAO;
+	private MemberVO memberVO;
 	@Autowired
-	private InvitationDAO invitationDAO;
+	private InvitationVO invitationVO;
 	@BeforeAll
 	void setUp() {
-		userDAO = new UserDAO("test_user", "010-0000-0000", "test@gmail.com");
-		groupDAO = new GroupDAO("test_group");
-		memberDAO = new MemberDAO(groupDAO, userDAO, "Y");
-		invitationDAO = new InvitationDAO("/invites/link?test", "N", "N", groupDAO, userDAO);
+		userVO = new UserVO("test_user", "010-0000-0000", "test@gmail.com");
+		groupVO = new GroupVO("test_group");
+		memberVO = new MemberVO(groupVO, userVO, "Y");
+		invitationVO = new InvitationVO("/invites/link?test", "N", "N", groupVO, userVO);
 
 		log.info("[DAOs] ::: " +
-				"[userDAO] == " + userDAO +
-				"[groupDAO] == " + groupDAO +
-				"[memberDAO] == " + memberDAO +
-				"[invitationDAO] == " + invitationDAO);
+				"[userDAO] == " + userVO +
+				"[groupDAO] == " + groupVO +
+				"[memberDAO] == " + memberVO +
+				"[invitationDAO] == " + invitationVO);
 
 
-		groupService.saveGroup(groupDAO);
-		memberService.saveMember(memberDAO);
-		invitationService.saveInvitation(invitationDAO);
+		groupService.saveGroup(groupVO);
+		memberService.saveMember(memberVO);
+		invitationService.saveInvitation(invitationVO);
 
 	}
 	@Test
 	@Order(1)
 	void saveUser() {
 		setUp();
-		userService.saveUser(userDAO);
-		List<UserDAO> userDAOList = userService.getAllUsers();
-		log.info("userDAOList === {}", userDAOList);
+		userService.saveUser(userVO);
+		List<UserVO> userVOList = userService.getAllUsers();
+		log.info("userDAOList === {}", userVOList);
 	}
 
 }

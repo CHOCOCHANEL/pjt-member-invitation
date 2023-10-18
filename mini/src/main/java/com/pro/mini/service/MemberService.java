@@ -1,7 +1,7 @@
 package com.pro.mini.service;
 
 
-import com.pro.mini.dao.MemberDAO;
+import com.pro.mini.vo.MemberVO;
 import com.pro.mini.repository.MemberRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,21 +15,21 @@ public class MemberService {
     private MemberRepository memberRepository;
 
     @Transactional
-    public MemberDAO saveMember(MemberDAO memberDAO){
-        return memberRepository.save(memberDAO);
+    public MemberVO saveMember(MemberVO memberVO){
+        return memberRepository.save(memberVO);
     }
 
-    public List<MemberDAO> getAllMembers() {
+    public List<MemberVO> getAllMembers() {
         return memberRepository.findAll();
     }
-    public List<MemberDAO> getMembersByGroupId(Integer groupId) {
+    public List<MemberVO> getMembersByGroupId(Integer groupId) {
         return memberRepository.findAllByGroupId(groupId);
     }
-    public List<MemberDAO> getMemberByUserId(Integer userId){
+    public List<MemberVO> getMemberByUserId(Integer userId){
         return memberRepository.findAllByUserId(userId);
     }
 
-    public List<MemberDAO> getMembersByManagerYn(String managerYn){
+    public List<MemberVO> getMembersByManagerYn(String managerYn){
         return memberRepository.findAllByManagerYn(managerYn);
     }
 

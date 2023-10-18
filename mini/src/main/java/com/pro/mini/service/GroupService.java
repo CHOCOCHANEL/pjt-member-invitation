@@ -1,6 +1,6 @@
 package com.pro.mini.service;
 
-import com.pro.mini.dao.GroupDAO;
+import com.pro.mini.vo.GroupVO;
 import com.pro.mini.repository.GroupRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,19 +15,19 @@ public class GroupService {
     private GroupRepository groupRepository;
 
     @Transactional
-    public GroupDAO saveGroup(GroupDAO groupDAO){
-        return groupRepository.save(groupDAO);
+    public GroupVO saveGroup(GroupVO groupVO){
+        return groupRepository.save(groupVO);
     }
 
-    public List<GroupDAO> getAllGroups() {
+    public List<GroupVO> getAllGroups() {
         return groupRepository.findAll();
     }
 
-    public Optional<GroupDAO> getGroupById(Integer id){
+    public Optional<GroupVO> getGroupById(Integer id){
         return groupRepository.findById(id);
     }
 
-    public Optional<GroupDAO> getGroupByGroupName(String groupName){
+    public Optional<GroupVO> getGroupByGroupName(String groupName){
         return groupRepository.findByGroupName(groupName);
     }
 

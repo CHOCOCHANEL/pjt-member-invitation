@@ -1,4 +1,4 @@
-package com.pro.mini.dao;
+package com.pro.mini.vo;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -13,7 +13,7 @@ import java.sql.Timestamp;
 @AllArgsConstructor
 @Entity
 @Table(name = "Invitations")
-public class InvitationDAO {
+public class InvitationVO {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -28,19 +28,19 @@ public class InvitationDAO {
     private String resYn;
     @ManyToOne
     @JoinColumn(name = "group_id", referencedColumnName = "id", nullable = false) // foreign key (userId) references User (id)
-    private GroupDAO groupDAO;
+    private GroupVO groupVO;
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false) // foreign key (user_id) references User (id)
-    private UserDAO userDAO;
+    private UserVO userVO;
     @CreationTimestamp
     @Column(name = "created_at")
     private Timestamp createdAt;
 
-    public InvitationDAO(String invtLink, String invtYn, String resYn, GroupDAO groupDAO, UserDAO userDAO) {
+    public InvitationVO(String invtLink, String invtYn, String resYn, GroupVO groupVO, UserVO userVO) {
         this.invtLink = invtLink;
         this.invtYn = invtYn;
         this.resYn = resYn;
-        this.groupDAO = groupDAO;
-        this.userDAO = userDAO;
+        this.groupVO = groupVO;
+        this.userVO = userVO;
     }
 }
