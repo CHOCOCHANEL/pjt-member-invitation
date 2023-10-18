@@ -1,7 +1,9 @@
 package com.pro.mini.service;
 
+import com.pro.mini.vo.GroupVO;
 import com.pro.mini.vo.InvitationVO;
 import com.pro.mini.repository.InvitationRepository;
+import com.pro.mini.vo.UserVO;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -37,14 +39,14 @@ public class InvitationService {
     public List<InvitationVO> getInvitationsByResponseYn(String resYn){
         return invitationRepository.findAllByResYn(resYn);
     }
-    public List<InvitationVO> getInvitationsByUserId(Integer userId){
-        return invitationRepository.findAllByUserId(userId);
+    public List<InvitationVO> getInvitationsByUserVO(UserVO userVO){
+        return invitationRepository.findAllByUserVO(userVO);
     }
-    public List<InvitationVO> getInvitationsByGroupId(Integer groupId){
-        return invitationRepository.findAllByGroupId(groupId);
+    public List<InvitationVO> getInvitationsByGroupVO(GroupVO groupVO) {
+        return invitationRepository.findAllByGroupVO(groupVO);
     }
-    public List<InvitationVO> getInvitationsByUserIdByGroupId(Integer userId, Integer groupId){
-        return invitationRepository.findAllByUserIdAndGroupId(userId, groupId);
+    public List<InvitationVO> getInvitationsByUserVOAndGroupVO(UserVO userVO, GroupVO groupVO){
+        return invitationRepository.findAllByUserVOAndGroupVO(userVO, groupVO);
     }
 
     @Transactional

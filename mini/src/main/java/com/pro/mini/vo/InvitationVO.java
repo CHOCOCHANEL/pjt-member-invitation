@@ -26,11 +26,9 @@ public class InvitationVO {
     @Column(name = "res_yn", nullable = false)
     @ColumnDefault("'N'")
     private String resYn;
-    @ManyToOne
-    @JoinColumn(name = "group_id", referencedColumnName = "id", nullable = false) // foreign key (userId) references User (id)
+    @ManyToOne(fetch = FetchType.LAZY)
     private GroupVO groupVO;
-    @ManyToOne
-    @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false) // foreign key (user_id) references User (id)
+    @ManyToOne(fetch = FetchType.LAZY)
     private UserVO userVO;
     @CreationTimestamp
     @Column(name = "created_at")

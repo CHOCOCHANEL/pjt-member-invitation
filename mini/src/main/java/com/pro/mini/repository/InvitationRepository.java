@@ -1,6 +1,8 @@
 package com.pro.mini.repository;
 
+import com.pro.mini.vo.GroupVO;
 import com.pro.mini.vo.InvitationVO;
+import com.pro.mini.vo.UserVO;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -14,7 +16,7 @@ public interface InvitationRepository extends JpaRepository<InvitationVO, Intege
 
     public List<InvitationVO> findAllByInvtYn(String invtYn);
     public List<InvitationVO> findAllByResYn(String resYn);
-    public List<InvitationVO> findAllByUserId(Integer userId);
-    public List<InvitationVO> findAllByGroupId(Integer groupId);
-    public List<InvitationVO> findAllByUserIdAndGroupId(Integer userId, Integer groupId);
+    public List<InvitationVO> findAllByUserVO(UserVO userVO);
+    public List<InvitationVO> findAllByGroupVO(GroupVO groupVO);
+    public List<InvitationVO> findAllByUserVOAndGroupVO(UserVO userVO, GroupVO groupVO);
 }

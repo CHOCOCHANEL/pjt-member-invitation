@@ -18,12 +18,9 @@ public class MemberVO {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private int id;
-
     @ManyToOne
-    @JoinColumn(name = "group_id", referencedColumnName = "id", nullable = false) // foreign key (userId) references User (id)
     private GroupVO groupVO;
     @ManyToOne
-    @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false) // foreign key (user_id) references User (id)
     private UserVO userVO;
     @Column(name = "manager_yn", nullable = false)
     @ColumnDefault("'N'")

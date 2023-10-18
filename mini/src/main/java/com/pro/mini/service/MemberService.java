@@ -1,8 +1,10 @@
 package com.pro.mini.service;
 
 
+import com.pro.mini.vo.GroupVO;
 import com.pro.mini.vo.MemberVO;
 import com.pro.mini.repository.MemberRepository;
+import com.pro.mini.vo.UserVO;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,11 +24,11 @@ public class MemberService {
     public List<MemberVO> getAllMembers() {
         return memberRepository.findAll();
     }
-    public List<MemberVO> getMembersByGroupId(Integer groupId) {
-        return memberRepository.findAllByGroupId(groupId);
+    public List<MemberVO> getMembersByGroupVO(GroupVO groupVO) {
+        return memberRepository.findAllByGroupVO(groupVO);
     }
-    public List<MemberVO> getMemberByUserId(Integer userId){
-        return memberRepository.findAllByUserId(userId);
+    public List<MemberVO> getMemberByUserVO(UserVO userVO){
+        return memberRepository.findAllByUserVO(userVO);
     }
 
     public List<MemberVO> getMembersByManagerYn(String managerYn){
