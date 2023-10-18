@@ -1,5 +1,6 @@
 package com.pro.mini.vo;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
@@ -12,6 +13,7 @@ import java.sql.Timestamp;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 @RequiredArgsConstructor
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Entity
 @Table(name = "Members")
 public class MemberVO {

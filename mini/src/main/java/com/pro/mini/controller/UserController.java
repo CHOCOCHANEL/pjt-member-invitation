@@ -34,7 +34,7 @@ public class UserController {
     @ResponseBody
     @PostMapping
     public ResponseEntity<UserVO> saveUser(HttpServletRequest req, HttpServletResponse res, @RequestBody String jsonStr) throws IOException {
-        log.info("jsonStr ::: {}", jsonStr);
+        log.info("jsonStr ::: \n{}", jsonStr);
         ObjectMapper mapper = new ObjectMapper();
         UserVO userVO = mapper.readValue(jsonStr, UserVO.class);
 

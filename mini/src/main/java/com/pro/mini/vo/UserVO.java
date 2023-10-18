@@ -15,6 +15,7 @@ import java.util.List;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 @RequiredArgsConstructor
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Entity
 @Table(name = "Users")
 public class UserVO {
