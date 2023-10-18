@@ -40,7 +40,7 @@
 
 🔶 \[Incompleted] Assignment functional requirements are implemented/processed on the server (backend)<br>
 
-### 📗Documentation📘
+### 📗Documentations📘
 1) [API Documentation](https://documenter.getpostman.com/view/20944788/2s9YR86EZn)
 2) [Entity Relation Diagram](https://drawsql.app/teams/team-chanel/diagrams/be-pro-mini)
 
