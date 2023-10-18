@@ -2,6 +2,7 @@ package com.pro.mini.service;
 
 import com.pro.mini.dao.UserDAO;
 import com.pro.mini.repository.UserRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +13,7 @@ import java.util.Optional;
 public class UserService {
     @Autowired
     private UserRepository userRepository;
-
+    @Transactional
     public UserDAO saveUser(UserDAO userDAO){
         return userRepository.save(userDAO);
     }
@@ -33,6 +34,7 @@ public class UserService {
         return userRepository.findAllByName(name);
     }
 
+    @Transactional
     public void deleteUser(Integer id){
         userRepository.deleteById(id);
     }

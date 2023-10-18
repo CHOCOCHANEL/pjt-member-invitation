@@ -2,6 +2,7 @@ package com.pro.mini.service;
 
 import com.pro.mini.dao.InvitationDAO;
 import com.pro.mini.repository.InvitationRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,7 @@ public class InvitationService {
     @Autowired
     private InvitationRepository invitationRepository;
 
+    @Transactional
     public InvitationDAO saveInvitation(InvitationDAO invitationDAO){
         return invitationRepository.save(invitationDAO);
     }
@@ -45,6 +47,7 @@ public class InvitationService {
         return invitationRepository.findAllByUserIdByGroupId(userId, groupId);
     }
 
+    @Transactional
     public void deleteInvitation(Integer id){
         invitationRepository.deleteById(id);
     }

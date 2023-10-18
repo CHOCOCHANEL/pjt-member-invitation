@@ -3,6 +3,7 @@ package com.pro.mini.service;
 
 import com.pro.mini.dao.MemberDAO;
 import com.pro.mini.repository.MemberRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,7 @@ public class MemberService {
     @Autowired
     private MemberRepository memberRepository;
 
+    @Transactional
     public MemberDAO saveMember(MemberDAO memberDAO){
         return memberRepository.save(memberDAO);
     }
@@ -31,6 +33,7 @@ public class MemberService {
         return memberRepository.findAllByManagerYn(managerYn);
     }
 
+    @Transactional
     public void deleteMember(Integer id){
         memberRepository.deleteById(id);
     }

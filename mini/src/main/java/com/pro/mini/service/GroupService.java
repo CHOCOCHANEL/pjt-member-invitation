@@ -2,6 +2,7 @@ package com.pro.mini.service;
 
 import com.pro.mini.dao.GroupDAO;
 import com.pro.mini.repository.GroupRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,7 @@ public class GroupService {
     @Autowired
     private GroupRepository groupRepository;
 
+    @Transactional
     public GroupDAO saveGroup(GroupDAO groupDAO){
         return groupRepository.save(groupDAO);
     }
@@ -29,6 +31,7 @@ public class GroupService {
         return groupRepository.findByGroupName(groupName);
     }
 
+    @Transactional
     public void deleteUser(Integer id){
         groupRepository.deleteById(id);
     }
