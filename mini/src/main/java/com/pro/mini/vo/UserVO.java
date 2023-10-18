@@ -29,7 +29,7 @@ public class UserVO {
     private String name;
     @Column(name = "phone", nullable = false)
     private String phone;
-    @Column(name = "email", nullable = false)
+    @Column(name = "email", nullable = false, unique = true)
     private String email;
     @CreationTimestamp
     @Column(name = "created_at")

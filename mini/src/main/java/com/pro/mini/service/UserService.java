@@ -31,8 +31,8 @@ public class UserService {
         return userRepository.findById(id);
     }
 
-    public List<UserVO> getUsersByEmail(String email){
-        return userRepository.findAllByEmail(email);
+    public Optional<UserVO> getUserByEmail(String email){
+        return userRepository.findByEmail(email);
     }
 
     public List<UserVO> getUsersByName(String name){
